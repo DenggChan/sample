@@ -1,0 +1,351 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+
+	font-family: 'Outfit', sans-serif;
+	list-style: none;
+	text-decoration: none;
+	scroll-behavior: smooth;
+	scroll-padding-top: 3rem;
+}
+
+/* sorry makalat di ko na hinihiwalay css, palagyan nlng ng database yung booking- Teves */
+
+
+/* kung may gusto idagdag na design dito gumamit ng kulay para tugma sa palette */
+:root{
+	--main-color: #ff9f0d;
+	--text-color: #fff;
+	--other-color: #212121;
+	--second-color: #9e9e9e;
+	--bg-color: #111111;
+
+	--big-font: 4.5rem;
+	--h2-font: 2.6rem;
+	--p-font: 1.1rem;
+}
+
+body{
+	background: var(--bg-color);
+	color: var(--text-color);
+}
+
+header{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	right: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: transparent;
+	padding: 30px 14%;
+	transition: all .50s ease;
+
+}
+
+.footer {
+    background: var(--other-color);
+    padding: 20px;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+}
+
+.social-icons img {
+    width: 30px; 
+    height: auto;
+}
+
+.logo{
+
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 33px;
+    font-weight: 700; 
+}
+
+.logo i{
+
+    vertical-align: middle;
+    margin-right: 8px;
+    color: var(--main-color);      
+}
+
+.navlist{
+    display: flex;
+}
+    
+.navlist a{
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 600;
+    margin: 0 30px;
+    transition: all .50s ease;
+}
+.navlist a:hover{
+    color: var(--main-color);  
+}
+.navlist a.active{
+    color: var(--main-color);   
+}
+
+/* --------------------------------------------------------home page */
+
+section{
+	padding: 70px 14% 60px;
+}
+.home{
+    position: relative;
+    height: 100vh;
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap:2rem;
+}
+.home-img img{
+    width: 100%;
+    height: auto;  
+}
+.home-text h1{
+   font-size: var(--big-font);
+   font-weight: 700;
+   line-height: 1.3;
+   margin-bottom: 1rem;
+}
+span{
+    color: var(--main-color);
+}
+.btn{
+    display: inline-block;
+    padding: 15px 35px;
+    background: var(--other-color);
+    color: var(--main-color);
+    font-size: var(--p-font);
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 3rem;
+    transition: all .50s ease;
+}
+.btn i{
+    vertical-align: middle;
+    margin-left: 9px;
+    font-size: 22px;
+}
+.btn:hover{
+    background: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: #ff9f0d 0px 1px 25px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--other-color);
+}
+
+.container-box {
+    text-align: center;
+}
+
+.container-box img {
+    max-width: 100px; 
+    margin-bottom: 10px;
+}
+
+
+
+/* -----------------------------------------------------------------design for menu page */
+
+
+.menu-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    padding: 50px 10%; 
+    margin-top: 100px; 
+}
+
+.menu-item {
+    background-color: var(--other-color);
+    border: 1px solid var(--second-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 0 10px 20px; 
+    max-width: 400px; 
+    width: calc(50% - 20px); 
+   
+}
+
+
+.menu-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.menu-item h3 {
+    font-size: var(--h2-font);
+    margin: 10px 0;
+}
+
+.menu-item p {
+    font-size: var(--p-font);
+    color: var(--text-color);
+    margin: 10px 0;
+}
+
+
+.order-btn {
+    background: var(--main-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: var(--p-font);
+    transition: all .50s ease;
+}
+
+
+.order-btn:hover {
+    background: var(--bg-color);
+    color: var(--main-color);
+    box-shadow: #ff9f0d 0px 1px 25px;
+}
+
+/* -----------------------------------------------------------------design for about page */
+
+.about-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    padding: 50px 5px; 
+    margin-top: 100px; 
+}
+
+.about-item {
+    background-color: var(--other-color);
+    border: 1px solid var(--second-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 0 10px 20px; 
+    max-width: 400px; 
+    width: calc(50% - 20px); 
+   
+}
+
+.about-item:hover {
+    color: var(--main-color);
+    box-shadow: #ff9f0d 0px 1px 25px;
+}
+
+.about-item img {
+    max-width: 100%;
+    height: 80%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.about-item h3 {
+    font-size: var(--h3-font);
+    margin: 10px 0;
+    color: #ff9f0d;
+}
+
+/* -----------------------------------------------------------------design for book page */
+
+.book-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    padding: 50px 10%; 
+    margin-top: 100px; 
+}
+
+.book-item {
+    background-color: var(--other-color);
+    border: 1px solid var(--second-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 40px; 
+    margin: 0 20px 40px; 
+    max-width: 550%; 
+}
+
+.submit-btn {
+    background: var(--main-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: var(--p-font);
+    transition: all .50s ease;
+}
+
+
+.submit-btn:hover {
+    background: var(--bg-color);
+    color: var(--main-color);
+    box-shadow: #ff9f0d 0px 1px 25px;
+}
+
+
+.reset-btn {
+    background: var(--main-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: var(--p-font);
+    transition: all .50s ease;
+}
+
+.reset-btn:hover {
+    background: var(--bg-color);
+    color: var(--main-color);
+    box-shadow: #ff9f0d 0px 1px 25px;
+}
+
+
+/* -----------------------------------------------------------------design for reserved page */
+.reservation-details {
+    padding: 50px 10%;
+    margin-top: 100px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.reservation-details h2 {
+    font-size: var(--h2-font);
+    margin-bottom: 20px;
+}
+
+.reservation-details p {
+    font-size: var(--p-font);
+    margin-bottom: 10px;
+}
+
+.reservation-details p strong {
+    color: var(--main-color);
+}
+
+.reservation-details p:hover {
+    color: var(--main-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
