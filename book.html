@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feastify - Book</title>
+    <link rel="stylesheet" type="text/css" href="C:\Users\acer\OneDrive\Desktop\websys\css\style.css">
+
+    <!-- Icon source -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!-- Fonts Ultra/Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ultra&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo"><i class='bx bxs-book-bookmark' style='color:#ff9f0d' ></i>Feastify</a>
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="book.html" class="active">Book</a></li>
+            <li><a href="reserved.html">Reserved</a></li>
+        </ul>
+    </header>
+
+    <section class="book-container">
+        <center><div class="book-item">
+            <center><h3 style="color: #ff9f0d;">Make Online Reservation</h3></center><br><br><br>
+            <form id="reservationForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required><br><br>
+                <label for="date">Date:</label>
+                <input type="date" id="date" required><br><br>
+                <label for="time">Time:</label>
+                <input type="time" id="time" required><br><br>
+                <label for="participants">Number of Participants:</label>
+                <input type="number" id="participants" min="1" max="8" required><br><br>
+                <label for="tableNumber">Table Number:</label>
+                <input type="number" id="tableNumber" min="1" max="10" required><br><br><br><br>
+                <button type="submit" class="submit-btn">Submit</button>
+                <button type="reset" class="reset-btn">Reset</button>
+            </form>
+        </div> </center>
+    </section>
+
+
+      <!-- divs -->
+    <section class="container">
+        <div class="container-box">
+        <img src="C:\Users\acer\OneDrive\Desktop\websys\assets/timef.png">
+            <h3>11:00 am - 9:00 pm</h3>
+            <a href="#" style="color: #ff9f0d;"> Working Hours</a>
+        </div>
+
+        <div class="container-box">
+            <img src="C:\Users\acer\OneDrive\Desktop\websys\assets/currentf.png">
+            <h3>109 Samson Rd, Caloocan, 1400 Metro Manila</h3>
+            <a href="#" style="color: #ff9f0d;"> Get Directions</a>
+        </div>
+        
+        <div class="container-box">
+            <img src="C:\Users\acer\OneDrive\Desktop\websys\assets/phonef.png">
+            <h3>(123) 111-234567</h3>
+            <a href="#" style="color: #ff9f0d;"> Call Us Now</a>
+        </div>
+
+    </section>
+
+<br>
+     <!-- footer -->
+    <footer>
+        <div class="social-icons">
+            <img src="C:\Users\acer\OneDrive\Desktop\websys\assets/fb.png" alt="Facebook">
+            <img src="C:\Users\acer\OneDrive\Desktop\websys\assets/twit.png" alt="Twitter">
+            <img src="C:\Users\acer\OneDrive\Desktop\websys\assets/ig.png" alt="Instagram">
+            <img src="C:\Users\acer\OneDrive\Desktop\websys\assets/in.png" alt="LinkedIn">
+            <br>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("reservationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            var name = document.getElementById("name").value;
+            var date = document.getElementById("date").value;
+            var time = document.getElementById("time").value;
+            var participants = document.getElementById("participants").value;
+            var tableNumber = document.getElementById("tableNumber").value;
+
+            var selectedDate = new Date(date + ' ' + time);
+            var currentDate = new Date();
+            if (selectedDate < currentDate) {
+                alert("Invalid date and time.");
+                return;
+            }
+
+            var reservation = {
+                name: name,
+                date: date,
+                time: time,
+                participants: participants,
+                tableNumber: tableNumber
+            };
+
+            var reservations = JSON.parse(localStorage.getItem("reservations")) || [];
+            reservations.push(reservation);
+            localStorage.setItem("reservations", JSON.stringify(reservations));
+
+            alert("Reservation submitted successfully!");
+
+            document.getElementById("reservationForm").reset();
+        });
+
+        var reservations = JSON.parse(localStorage.getItem("reservations")) || [];
+        var currentDate = new Date();
+        var updatedReservations = reservations.filter(function(reservation) {
+            var reservationDate = new Date(reservation.date + ' ' + reservation.time);
+            return reservationDate >= currentDate;
+        });
+        localStorage.setItem("reservations", JSON.stringify(updatedReservations));
+    </script>
+
+</body>
+</html>
